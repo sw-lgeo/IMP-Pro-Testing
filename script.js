@@ -8,22 +8,38 @@ if (menuToggle && nav) {
   });
 }
 
-const estimationForm = document.querySelector('#estimation-form');
-const estimationResult = document.querySelector('#estimation-result');
+function attachFormHandler(formId, resultId, message) {
+  const form = document.getElementById(formId);
+  const result = document.getElementById(resultId);
 
-if (estimationForm && estimationResult) {
-  estimationForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    estimationResult.textContent = 'Merci, un conseiller IMP Pro vous contactera pour une estimation détaillée.';
-  });
+  if (form && result) {
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      result.textContent = message;
+    });
+  }
 }
 
-const partenaireForm = document.querySelector('#partenaire-form');
-const partenaireResult = document.querySelector('#partenaire-result');
+attachFormHandler(
+  'estimation-form',
+  'estimation-result',
+  'Merci, un conseiller IMP Pro vous contactera pour une estimation détaillée.'
+);
 
-if (partenaireForm && partenaireResult) {
-  partenaireForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    partenaireResult.textContent = 'Merci, nous revenons vers vous rapidement pour finaliser votre partenariat.';
-  });
-}
+attachFormHandler(
+  'partenaire-form',
+  'partenaire-result',
+  'Merci, nous revenons vers vous rapidement pour finaliser votre partenariat.'
+);
+
+attachFormHandler(
+  'showroom-form',
+  'showroom-result',
+  'Votre rendez-vous est pris en compte, un conseiller vous confirme un créneau au plus vite.'
+);
+
+attachFormHandler(
+  'contact-form',
+  'contact-result',
+  'Message envoyé ! Nous revenons vers vous sous 24h ouvrées.'
+);
