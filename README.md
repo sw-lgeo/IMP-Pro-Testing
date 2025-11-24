@@ -36,4 +36,11 @@ A GitHub Actions workflow (`.github/workflows/site-quality.yml`) lint checks all
 
 The static site in `public/` is automatically published to GitHub Pages from the `work` branch. Pushes to the branch trigger `.github/workflows/deploy.yml`, which uploads the `public/` directory as a Pages artifact and deploys it to the `github-pages` environment.
 
-The deployed site is mapped to the custom domain `zebra.hom.lu` via the `public/CNAME` file. Point the `zebra.hom.lu` DNS to the GitHub Pages hostname for this repository (e.g., a `CNAME` record targeting `<username>.github.io`) so the domain resolves to the published pages.
+### Custom domain (`zebra.hom.lu`) without affecting `hom.lu`
+
+The deployed site is mapped to the subdomain `zebra.hom.lu` via the `public/CNAME` file. To keep your apex domain (`hom.lu`) untouched (for mail, web, etc.) while pointing only the subdomain to GitHub Pages:
+
+1. **Leave `hom.lu` DNS records as-is.** Keep your existing A/AAAA, MX, and other records for the apex so the main domain continues to resolve and handle email normally.
+2. **Add a CNAME for the subdomain.** Create a DNS record for `zebra.hom.lu` that points to your GitHub Pages host (e.g., `yourusername.github.io`). Do not add or change any apex `hom.lu` CNAME/A records for this site.
+3. **Configure GitHub Pages.** In the repository settings, set the custom domain to `zebra.hom.lu` and save to ensure HTTPS is provisioned. Keeping the custom domain set in Pages matches the `public/CNAME` file and prevents 403s.
+4. **Allow propagation.** After updating DNS, wait a few minutes and reload `https://zebra.hom.lu/` to confirm the site resolves while `https://hom.lu/` remains unchanged.
