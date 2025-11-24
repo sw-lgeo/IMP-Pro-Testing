@@ -3,135 +3,138 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IMP Pro | Rénovation & Solutions Énergétiques Intelligentes</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <title>IMP Pro | Rénovation & Énergie</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav-container">
+  <header>
+    <div class="container header-inner">
       <div class="logo">IMP Pro</div>
-      <button class="menu-toggle" aria-expanded="false" aria-controls="primary-menu">☰</button>
-      <nav id="primary-menu" class="nav" aria-label="Navigation principale">
+      <button class="menu-toggle" aria-expanded="false" aria-controls="primary-menu" aria-label="Ouvrir le menu">☰</button>
+      <nav class="nav" id="primary-menu" aria-label="Navigation principale">
         <ul class="nav-links">
-          <li><a href="index.html" class="active">Accueil</a></li>
-          <li><a href="particuliers.html">Particuliers</a></li>
-          <li><a href="installateurs.html">Installateurs</a></li>
-          <li><a href="showroom.html">Showroom</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a class="active" href="index.html">Accueil</a></li>
+          <li><a href="renovation.html">Rénovation</a></li>
+          <li><a href="energie-smart-home.html">Énergie & Smart Home</a></li>
+          <li><a href="#compte">Mon compte</a></li>
         </ul>
-        <a class="btn cta" href="contact.html">Demander une estimation</a>
+        <a class="btn btn-primary" href="#estimation">Demander une estimation</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="container hero-content">
-        <div class="hero-text">
-          <p class="eyebrow">Energie · Rénovation · Smart Home</p>
-          <h1>IMP Pro – Rénovation &amp; Solutions Énergétiques Intelligentes</h1>
-          <p class="lead">Nous aidons les propriétaires et installateurs à concevoir des maisons intelligentes, sobres en énergie et prêtes pour l'avenir.</p>
-          <div class="hero-actions">
-            <a class="btn primary" href="particuliers.html">Je suis un particulier</a>
-            <a class="btn outline" href="installateurs.html">Je suis installateur / électricien</a>
+    <section class="hero" id="estimation">
+      <div class="container hero-grid">
+        <div>
+          <p class="notice">Deux univers complémentaires</p>
+          <h1>IMP Pro – Rénovation &amp; Énergie pour votre habitat</h1>
+          <p class="lead">IMP Pro regroupe deux univers pour moderniser votre maison : une offre Rénovation pour le confort et la performance, et une offre Énergie &amp; Smart Home pour produire, piloter et sécuriser votre habitat.</p>
+          <div class="dual-choice">
+            <div class="choice-card">
+              <span class="tag" style="background: linear-gradient(135deg, #e36414, #f97316);">Univers Rénovation</span>
+              <p>Isolation, façades, finitions, confort intérieur et travaux rapides avec accompagnement.</p>
+              <a class="btn btn-renovation" href="renovation.html">Découvrir la rénovation</a>
+            </div>
+            <div class="choice-card">
+              <span class="tag" style="background: linear-gradient(135deg, #0ea5e9, #0f766e);">Univers Énergie &amp; Smart Home</span>
+              <p>Énergie, domotique et sécurité : pompes à chaleur, photovoltaïque, bornes, ventilation et pilotage intelligent.</p>
+              <a class="btn btn-energie" href="energie-smart-home.html">Découvrir l'énergie</a>
+            </div>
           </div>
         </div>
-        <div class="hero-visual" aria-hidden="true">
-          <div class="gradient-circle"></div>
-          <div class="shape-card">
-            <p class="meta">Solutions intelligentes</p>
-            <h3>Optimisez votre énergie</h3>
-            <p>Pompes à chaleur · Photovoltaïque · Gestion intelligente</p>
+        <div class="cta-block">
+          <div class="section-header" style="margin-bottom: 0.5rem;">
+            <h2>Besoin d'une estimation&nbsp;?</h2>
+            <p class="section-note">Expliquez-nous votre projet et nous vous orientons vers l'univers adapté.</p>
           </div>
+          <div class="mini-grid">
+            <div class="highlight">
+              <strong>Rénovation</strong><br>
+              Isolation, façades, finitions, confort intérieur.
+            </div>
+            <div class="highlight">
+              <strong>Énergie &amp; Smart Home</strong><br>
+              PAC, photovoltaïque, bornes de recharge, ventilation, domotique.
+            </div>
+          </div>
+          <a class="btn btn-primary" href="#compte">Créer ou accéder à mon compte</a>
         </div>
       </div>
     </section>
 
-    <section class="section" id="univers">
-      <div class="container">
-        <div class="section-header">
-          <h2>Deux univers IMP Pro</h2>
-          <p>Des offres adaptées aux propriétaires comme aux professionnels.</p>
-        </div>
-        <div class="card-grid two-col">
-          <article class="card">
-            <div class="card-body">
-              <h3>Particuliers</h3>
-              <p>Modernisez votre maison avec des solutions clé-en-main : chauffage efficient, production solaire, stockage et pilotage intelligent.</p>
-              <a class="btn text" href="particuliers.html">Solutions pour particuliers</a>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card-body">
-              <h3>Installateurs &amp; Électriciens</h3>
-              <p>Accédez à une expertise terrain, des kits prêts à poser et un support technique dédié pour vos chantiers.</p>
-              <a class="btn text" href="installateurs.html">Services pour installateurs</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section muted" id="pourquoi">
+    <section class="section" id="pourquoi">
       <div class="container">
         <div class="section-header">
           <h2>Pourquoi IMP Pro ?</h2>
-          <p>Un partenaire unique pour l'efficacité énergétique et la rénovation.</p>
+          <p>Des services communs aux deux univers pour des projets fiables et rapides.</p>
         </div>
-        <div class="feature-grid">
-          <article class="feature">
-            <h3>Un seul interlocuteur</h3>
-            <p>Nous coordonnons la rénovation, l'énergie et la domotique pour simplifier vos projets.</p>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Qualité des produits</h3>
+            <p class="section-note">Sélection de marques reconnues pour la durabilité.</p>
           </article>
-          <article class="feature">
-            <h3>Solutions clé-en-main</h3>
-            <p>Études, installation et suivi : profitez d'un parcours maîtrisé de bout en bout.</p>
+          <article class="card">
+            <h3>Livraison rapide</h3>
+            <p class="section-note">Stock local et logistique pour vos chantiers.</p>
           </article>
-          <article class="feature">
-            <h3>Support technique</h3>
-            <p>Assistance et formation pour les installateurs, avec un bureau d'études dédié.</p>
+          <article class="card">
+            <h3>Support technique &amp; accompagnement</h3>
+            <p class="section-note">Conseils, dimensionnement et assistance après achat.</p>
           </article>
-          <article class="feature">
-            <h3>Showroom physique</h3>
-            <p>Découvrez et testez les équipements dans notre showroom Energie &amp; Smart Home.</p>
+          <article class="card">
+            <h3>Showroom &amp; conseil</h3>
+            <p class="section-note">Démonstrations, essais produits et accompagnement.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="showroom">
-      <div class="container showroom">
-        <div class="showroom-text">
-          <h2>Découvrez notre Showroom</h2>
-          <p>Une immersion dans l'efficacité énergétique : pompes à chaleur, photovoltaïque, bornes de recharge, solutions de stockage et pilotage intelligent.</p>
-          <a class="btn primary" href="showroom.html">Découvrir le showroom</a>
+    <section class="section" id="compte">
+      <div class="container">
+        <div class="section-header">
+          <h2>Créer un compte / Devenir installateur</h2>
+          <p>Accédez au catalogue Odoo, suivez vos commandes et demandez des offres.</p>
         </div>
-        <div class="showroom-visual" aria-hidden="true">
-          <div class="badge">Energie &amp; Smart Home</div>
-          <div class="showroom-card">
-            <p>Bornes · PAC · PV · Batterie</p>
+        <div class="card-grid">
+          <div class="card">
+            <h3>Créer un compte client</h3>
+            <p class="section-note">Pour découvrir les produits et acheter en ligne.</p>
+            <!-- TODO: Replace this URL with the real Odoo signup URL -->
+            <a class="btn btn-primary" href="https://odoo.example.com/my/signup">Créer un compte client</a>
+          </div>
+          <div class="card">
+            <h3>Se connecter / Mon compte</h3>
+            <p class="section-note">Retrouvez vos commandes et le catalogue complet après connexion.</p>
+            <!-- TODO: Replace this URL with the real Odoo login URL -->
+            <a class="btn btn-secondary" href="https://odoo.example.com/web/login">Se connecter</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="footer">
     <div class="container footer-grid">
       <div>
         <h3>IMP Pro</h3>
-        <p>Adresse : 123 Rue de l'Energie, Luxembourg</p>
+        <p>Adresse : 123 Rue de l'Énergie, Luxembourg</p>
         <p>Email : contact@imppro.lu</p>
         <p>Téléphone : +352 000 000</p>
       </div>
       <div>
-        <h4>Liens rapides</h4>
+        <h4>Pages</h4>
         <ul class="footer-links">
           <li><a href="index.html">Accueil</a></li>
-          <li><a href="particuliers.html">Particuliers</a></li>
-          <li><a href="installateurs.html">Installateurs</a></li>
-          <li><a href="showroom.html">Showroom</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="renovation.html">Rénovation</a></li>
+          <li><a href="energie-smart-home.html">Énergie & Smart Home</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Mon compte</h4>
+        <ul class="footer-links">
+          <li><!-- TODO: Replace this URL with the real Odoo signup URL --><a href="https://odoo.example.com/my/signup">Créer un compte client</a></li>
+          <li><!-- TODO: Replace this URL with the real Odoo login URL --><a href="https://odoo.example.com/web/login">Se connecter</a></li>
         </ul>
       </div>
     </div>
@@ -140,6 +143,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
