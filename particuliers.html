@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IMP Pro | Solutions pour les particuliers</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-container">
+      <div class="logo">IMP Pro</div>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="primary-menu">☰</button>
+      <nav id="primary-menu" class="nav" aria-label="Navigation principale">
+        <ul class="nav-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="particuliers.html" class="active">Particuliers</a></li>
+          <li><a href="installateurs.html">Installateurs</a></li>
+          <li><a href="showroom.html">Showroom</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a class="btn cta" href="contact.html">Demander une estimation</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <p class="eyebrow">Energie · Rénovation · Smart Home</p>
+          <h1>Solutions IMP Pro pour les particuliers</h1>
+          <p class="lead">IMP Pro propose des projets clé-en-main pour rendre votre maison plus confortable et économe en énergie.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="showroom.html">Découvrir le showroom</a>
+            <a class="btn outline" href="contact.html">Parler à un conseiller</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="gradient-circle"></div>
+          <div class="shape-card">
+            <p class="meta">Maison performante</p>
+            <h3>Clé-en-main</h3>
+            <p>Confort · Économie · Pilotage intelligent</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="solutions-particuliers">
+      <div class="container">
+        <div class="section-header">
+          <h2>Nos solutions pour votre maison</h2>
+          <p>Des équipements sélectionnés et coordonnés pour un résultat optimal.</p>
+        </div>
+        <div class="card-grid three-col">
+          <article class="card">
+            <div class="card-body">
+              <h3>Panneaux photovoltaïques</h3>
+              <ul>
+                <li>Étude solaire et dimensionnement</li>
+                <li>Pose avec onduleurs compatibles stockage</li>
+                <li>Suivi de production</li>
+              </ul>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-body">
+              <h3>Pompes à chaleur</h3>
+              <ul>
+                <li>Solution chauffage &amp; rafraîchissement</li>
+                <li>Intégration avec planchers ou radiateurs</li>
+                <li>Optimisation consommation</li>
+              </ul>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-body">
+              <h3>Isolation toiture</h3>
+              <ul>
+                <li>Analyse thermique</li>
+                <li>Isolation performante</li>
+                <li>Préparation toiture pour PV</li>
+              </ul>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-body">
+              <h3>Isolation façade</h3>
+              <ul>
+                <li>Matériaux durables</li>
+                <li>Réduction des déperditions</li>
+                <li>Finitions soignées</li>
+              </ul>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-body">
+              <h3>Rénovation &amp; confort intérieur</h3>
+              <ul>
+                <li>Ventilation, éclairage, confort acoustique</li>
+                <li>Coordination des corps de métier</li>
+                <li>Suivi de chantier</li>
+              </ul>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-body">
+              <h3>Smart Home &amp; bornes de recharge</h3>
+              <ul>
+                <li>Gestion intelligente des consommations</li>
+                <li>Bornes de recharge compatibles photovoltaïque</li>
+                <li>Application et scénarios personnalisés</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section muted" id="estimation">
+      <div class="container">
+        <div class="section-header">
+          <h2>Estimation de votre projet</h2>
+          <p>Estimez vos coûts en ligne, un conseiller vous contactera pour valider et affiner votre projet.</p>
+        </div>
+        <form id="estimation-form" class="form-grid">
+          <div class="form-group">
+            <label for="type-projet">Type de projet</label>
+            <select id="type-projet" name="type-projet" required>
+              <option value="">Sélectionnez</option>
+              <option value="Panneaux solaires">Panneaux solaires</option>
+              <option value="Pompe à chaleur">Pompe à chaleur</option>
+              <option value="Isolation">Isolation</option>
+              <option value="Pack complet">Pack complet</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="type-maison">Type de maison</label>
+            <select id="type-maison" name="type-maison" required>
+              <option value="">Sélectionnez</option>
+              <option value="Maison individuelle">Maison individuelle</option>
+              <option value="Appartement">Appartement</option>
+              <option value="Maison jumelée">Maison jumelée</option>
+              <option value="Maison de ville">Maison de ville</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="code-postal">Code postal</label>
+            <input type="text" id="code-postal" name="code-postal" required>
+          </div>
+          <div class="form-actions">
+            <button class="btn primary" type="submit">Obtenir une estimation</button>
+          </div>
+        </form>
+        <div id="estimation-result" class="form-result" role="status" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section" id="installation-partenaire">
+      <div class="container">
+        <div class="section-header">
+          <h2>Installation par un partenaire IMP Pro</h2>
+          <p>Si vous avez déjà un installateur, nous fournissons matériel et support. Sinon, nous planifions l'installation via un Partenaire IMP Pro.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-section">
+      <div class="container">
+        <div class="cta-actions">
+          <a class="btn primary" href="showroom.html">Prendre rendez-vous au showroom</a>
+          <a class="btn outline" href="contact.html">Envoyer une demande</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>IMP Pro</h3>
+        <p>Adresse : 123 Rue de l'Energie, Luxembourg</p>
+        <p>Email : contact@imppro.lu</p>
+        <p>Téléphone : +352 000 000</p>
+      </div>
+      <div>
+        <h4>Liens rapides</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="particuliers.html" class="active">Particuliers</a></li>
+          <li><a href="installateurs.html">Installateurs</a></li>
+          <li><a href="showroom.html">Showroom</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2024 IMP Pro. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
