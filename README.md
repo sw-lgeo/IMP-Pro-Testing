@@ -1,6 +1,6 @@
 # IMP Pro Static Site
 
-This repository contains the marketing website for IMP Pro, featuring pages for homeowners, installers, showroom information, and contact details. The site is fully static and can be served from any HTTP server or a GitHub Pages deployment.
+This repository contains the marketing website for IMP Pro, featuring pages for homeowners, installers, showroom information, and contact details. The site is fully static and can be served from any generic HTTP host without any platform-specific configuration.
 
 ## Project structure
 
@@ -34,13 +34,10 @@ A GitHub Actions workflow (`.github/workflows/site-quality.yml`) lint checks all
 
 ## Deployment
 
-The static site in `public/` is automatically published to GitHub Pages from the `work` branch. Pushes to the branch trigger `.github/workflows/deploy.yml`, which uploads the `public/` directory as a Pages artifact and deploys it to the `github-pages` environment.
+The site is deployed as a plain static export. Build output lives directly in the `public/` directory and can be uploaded to any host.
 
-### Custom domain (`zebra.hom.lu`) without affecting `hom.lu`
+For Hostinger (or any similar provider):
 
-The deployed site is mapped to the subdomain `zebra.hom.lu` via the `public/CNAME` file. To keep your apex domain (`hom.lu`) untouched (for mail, web, etc.) while pointing only the subdomain to GitHub Pages:
-
-1. **Leave `hom.lu` DNS records as-is.** Keep your existing A/AAAA, MX, and other records for the apex so the main domain continues to resolve and handle email normally.
-2. **Add a CNAME for the subdomain.** Create a DNS record for `zebra.hom.lu` that points to your GitHub Pages host (e.g., `yourusername.github.io`). Do not add or change any apex `hom.lu` CNAME/A records for this site.
-3. **Configure GitHub Pages.** In the repository settings, set the custom domain to `zebra.hom.lu` and save to ensure HTTPS is provisioned. Keeping the custom domain set in Pages matches the `public/CNAME` file and prevents 403s.
-4. **Allow propagation.** After updating DNS, wait a few minutes and reload `https://zebra.hom.lu/` to confirm the site resolves while `https://hom.lu/` remains unchanged.
+1. Clean the destination folder (e.g., `/public_html/zebra`).
+2. Upload the entire contents of `public/` (including HTML, CSS, JS, and assets) into that folder.
+3. The site will be reachable at the subdomain you configured (e.g., `https://zebra.hom.lu`) without any extra server settings or `.htaccess` files.
