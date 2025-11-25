@@ -39,5 +39,5 @@ The site is deployed as a plain static export. Build output lives directly in th
 For Hostinger (or any similar provider):
 
 1. Clean the destination folder (e.g., `/public_html/zebra`).
-2. Upload the entire contents of `public/` (including HTML, CSS, JS, and assets) into that folder.
-3. The site will be reachable at the subdomain you configured (e.g., `https://zebra.hom.lu`) without any extra server settings or `.htaccess` files.
+2. Upload **the contents of** `public/` (including HTML, CSS, JS, and assets) into that folder. Do not nest the entire `public` directory—`index.html` must end up at `/public_html/zebra/index.html` (not `/public_html/zebra/public/index.html`).
+3. The site will be reachable at the subdomain you configured (e.g., `https://zebra.hom.lu`) without any extra server settings or `.htaccess` files. If you see a 403 Forbidden error, double-check that the upload did not create an extra `public` subfolder.
