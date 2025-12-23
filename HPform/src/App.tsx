@@ -12,7 +12,7 @@ import {
 import { useAutosave, loadAutosaved } from './hooks/useAutosave';
 import { buildLuxEebPacket, copyLuxEebPacket, downloadCsv, downloadJson, generateCsvBundle } from './utils/exporters';
 import { beispielBestandEFH } from './utils/sampleData';
-import { AlertTriangle, CheckCircle, Download, FileJson, Import, ListChecks, Zap } from 'lucide-react';
+import { AlertTriangle, CheckCircle, Download, FileJson, Import, ListChecks, RefreshCcw, Sparkles, Zap } from 'lucide-react';
 import clsx from 'clsx';
 
 const steps = [
@@ -174,35 +174,63 @@ export default function App() {
 
   return (
     <FormProvider {...methods}>
-      <main className="min-h-screen bg-slate-50">
-        <header className="bg-white border-b border-slate-200 px-6 py-4 flex items-center justify-between">
-          <div>
-            <h1 className="text-xl font-bold text-slate-900">HPform – LuxEeB Intake</h1>
-            <p className="text-sm text-slate-600">German labels, English guidance. Autosaves locally.</p>
-          </div>
-          <div className="flex gap-2 items-center">
-            <button className="button-secondary" type="button" onClick={handleStandardRestore}>Standardwert wiederherstellen</button>
-            <button className="button-secondary" type="button" onClick={handleLoadSample}>Beispieldaten laden</button>
-            <label className="button-secondary cursor-pointer flex items-center gap-2">
-              <Import size={16} /> JSON importieren
-              <input type="file" className="hidden" accept="application/json" onChange={(e) => handleImport(e.target.files?.[0])} />
-            </label>
-            <div className="flex items-center gap-2 bg-slate-100 px-3 py-2 rounded-lg">
-              <span className="text-xs text-slate-600">Modus</span>
-              <button
-                className={clsx('px-2 py-1 rounded-md text-xs font-semibold', simpleMode ? 'bg-sky-600 text-white' : 'bg-white border')}
-                type="button"
-                onClick={() => setSimpleMode(true)}
-              >
-                Simple
+      <main className="app-shell">
+        <header className="hero-panel">
+          <div className="flex flex-col gap-4">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+              <div className="flex items-center gap-3">
+                <div className="h-12 w-12 rounded-2xl bg-white/15 border border-white/20 flex items-center justify-center shadow-md">
+                  <Sparkles className="text-white" size={24} />
+                </div>
+                <div>
+                  <p className="text-xs uppercase tracking-wide text-white/70">LuxEeB Intake</p>
+                  <h1 className="text-2xl font-bold text-white">HPform</h1>
+                  <p className="text-sm text-white/80">German labels, English guidance. Autosaves locally.</p>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2 justify-start md:justify-end">
+                <div className="stat-pill">
+                  <span className="text-xs uppercase tracking-wide text-white/80">Passnummer</span>
+                  <span className="text-sm font-semibold">{values.Allgemeine_Projektdaten.Passnummer ?? 'keine Nummer'}</span>
+                </div>
+                <div className={clsx('stat-pill', missing.length === 0 ? 'bg-emerald-500/25 border-emerald-200 text-white' : 'bg-amber-400/25 border-amber-200 text-white')}>
+                  {missing.length === 0 ? <CheckCircle size={16} /> : <AlertTriangle size={16} />}
+                  <span>{missing.length === 0 ? 'Bereit für Export' : `${missing.length} Angaben fehlen`}</span>
+                </div>
+                <div className="stat-pill">
+                  <span className="h-2 w-2 rounded-full bg-white/80" />
+                  <span>{simpleMode ? 'Simple Modus' : 'Advanced Modus'}</span>
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <button className="button-secondary flex items-center gap-2" type="button" onClick={handleStandardRestore}>
+                <RefreshCcw size={16} /> Standardwert wiederherstellen
               </button>
-              <button
-                className={clsx('px-2 py-1 rounded-md text-xs font-semibold', !simpleMode ? 'bg-sky-600 text-white' : 'bg-white border')}
-                type="button"
-                onClick={() => setSimpleMode(false)}
-              >
-                Advanced
+              <button className="button-secondary flex items-center gap-2" type="button" onClick={handleLoadSample}>
+                <Zap size={16} /> Beispieldaten laden
               </button>
+              <label className="button-secondary cursor-pointer flex items-center gap-2">
+                <Import size={16} /> JSON importieren
+                <input type="file" className="hidden" accept="application/json" onChange={(e) => handleImport(e.target.files?.[0])} />
+              </label>
+              <div className="flex items-center gap-2 bg-white/10 border border-white/20 px-3 py-2 rounded-xl text-white text-sm font-semibold">
+                <span className="text-xs uppercase tracking-wide">Modus</span>
+                <button
+                  className={clsx('px-3 py-1 rounded-full text-xs font-semibold transition', simpleMode ? 'bg-white text-sky-700 shadow-sm' : 'bg-white/10 text-white border border-white/30')}
+                  type="button"
+                  onClick={() => setSimpleMode(true)}
+                >
+                  Simple
+                </button>
+                <button
+                  className={clsx('px-3 py-1 rounded-full text-xs font-semibold transition', !simpleMode ? 'bg-white text-sky-700 shadow-sm' : 'bg-white/10 text-white border border-white/30')}
+                  type="button"
+                  onClick={() => setSimpleMode(false)}
+                >
+                  Advanced
+                </button>
+              </div>
             </div>
           </div>
         </header>
